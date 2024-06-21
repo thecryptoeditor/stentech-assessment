@@ -1,0 +1,57 @@
+[
+    { 
+        "userId": 1, 
+        "activityType": "login", 
+        "timestamp": "2024-06-14T10:00:00Z"
+    },
+    { 
+        "userId": 1, 
+        "activityType": "login", 
+        "timestamp": "2024-06-14T10:00:00Z"
+    },
+    { 
+        "userId": 2, 
+        "activityType": "logout", 
+        "timestamp": "2024-06-14T10:00:00Z"
+    },
+    { 
+        "userId": 3, 
+        "activityType": "kyc", 
+        "timestamp": "2024-06-14T10:00:00Z"
+    },
+    { 
+        "userId": 4, 
+        "activityType": "dashboard-view", 
+        "timestamp": "2024-06-14T10:00:00Z"
+    },
+    { 
+        "userId": 4, 
+        "activityType": "transection",
+        "timestamp": "2024-06-14T10:00:00Z"
+    },
+    { 
+        "userId": 1, 
+        "activityType": "dashboard-view", 
+        "timestamp": "2024-06-14T10:00:00Z"
+    },
+    { 
+        "userId": 7, 
+        "activityType": "dashboard-view", 
+        "timestamp": "2024-06-14T10:00:00Z"
+    },
+    { 
+        "userId": 6, 
+        "activityType": "profile", 
+        "timestamp": "2024-06-14T10:00:00Z"
+    },
+    { 
+        "userId": 6, 
+        "activityType": "settings", 
+        "timestamp": "2024-06-14T10:00:00Z"
+    },
+    { 
+        "userId": 6, 
+        "activityType": "profile", 
+        "timestamp": "2024-06-14T10:00:00Z"
+    }
+]
