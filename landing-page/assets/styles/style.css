@@ -519,6 +519,7 @@ button:not(:disabled),
     .navbar-expand-lg {
         flex-wrap: nowrap;
         justify-content: flex-start;
+        background-color: white
     }
 
     .navbar-expand-lg .navbar-nav {

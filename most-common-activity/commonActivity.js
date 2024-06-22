@@ -109,3 +109,25 @@ mostFrequestNumber(userInfo);
 
 // Write a function to generate a timeline of activities for each user, sorted by timestamp.
 
+function generateUserTimelines(userInfo) {
+    
+    const userTimelines = {};
+
+    userInfo.forEach(activity => {6
+        const { userId, activityType, timestamp } = activity;
+        if (!userTimelines[userId]) {
+            userTimelines[userId] = [];
+        }
+        userTimelines[userId].push({ activityType, timestamp });
+    });
+
+    // Sort the activities for each user by timestamp
+    for (const userId in userTimelines) {
+        userTimelines[userId].sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+    }
+
+    return userTimelines;
+}
+
+console.log(generateUserTimelines(userInfo));
+
