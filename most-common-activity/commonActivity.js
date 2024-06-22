@@ -7,52 +7,52 @@ let userInfo = [
     { 
         "userId": 1, 
         "activityType": "login", 
-        "timestamp": "2024-06-14T10:00:00Z"
+        "timestamp": "2024-06-13T10:00:00Z"
     },
     { 
         "userId": 2, 
         "activityType": "logout", 
-        "timestamp": "2024-06-14T10:00:00Z"
+        "timestamp": "2024-06-12T10:00:00Z"
     },
     { 
         "userId": 3, 
         "activityType": "kyc", 
-        "timestamp": "2024-06-14T10:00:00Z"
+        "timestamp": "2024-06-11T10:00:00Z"
     },
     { 
         "userId": 4, 
         "activityType": "dashboard", 
-        "timestamp": "2024-06-14T10:00:00Z"
+        "timestamp": "2024-06-10T10:00:00Z"
     },
     { 
         "userId": 4, 
         "activityType": "transection",
-        "timestamp": "2024-06-14T10:00:00Z"
+        "timestamp": "2024-06-06T6:00:00Z"
     },
     { 
         "userId": 1, 
         "activityType": "dashboard", 
-        "timestamp": "2024-06-14T10:00:00Z"
+        "timestamp": "2024-06-04T10:00:00Z"
     },
     { 
         "userId": 7, 
         "activityType": "dashboard", 
-        "timestamp": "2024-06-14T10:00:00Z"
+        "timestamp": "2024-06-03T10:00:00Z"
     },
     { 
         "userId": 6, 
         "activityType": "profile", 
-        "timestamp": "2024-06-14T10:00:00Z"
+        "timestamp": "2024-06-02T10:00:00Z"
     },
     { 
         "userId": 6, 
         "activityType": "settings", 
-        "timestamp": "2024-06-14T10:00:00Z"
+        "timestamp": "2024-05-25T10:00:00Z"
     },
     { 
         "userId": 8, 
         "activityType": "profile", 
-        "timestamp": "2024-06-14T10:00:00Z"
+        "timestamp": "2024-05-20T10:00:00Z"
     }
 ];
 
@@ -106,3 +106,6 @@ function mostFrequestNumber(userInfo) {
 }
 
 mostFrequestNumber(userInfo);
+
+// Write a function to generate a timeline of activities for each user, sorted by timestamp.
+
