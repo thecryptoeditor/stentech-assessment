@@ -113,7 +113,7 @@ function generateUserTimelines(userInfo) {
     
     const userTimelines = {};
 
-    userInfo.forEach(activity => {6
+    userInfo.forEach(activity => {
         const { userId, activityType, timestamp } = activity;
         if (!userTimelines[userId]) {
             userTimelines[userId] = [];
@@ -121,7 +121,6 @@ function generateUserTimelines(userInfo) {
         userTimelines[userId].push({ activityType, timestamp });
     });
 
-    // Sort the activities for each user by timestamp
     for (const userId in userTimelines) {
         userTimelines[userId].sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
     }
