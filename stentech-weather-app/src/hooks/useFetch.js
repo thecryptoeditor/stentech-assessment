@@ -20,20 +20,20 @@ const useFetch = (url) => {
 
                 setdata(response);
             }
-            catch(err) {
+            catch (err) {
                 setError(err)
             }
-            finally{
+            finally {
                 setLoading(false);
             }
 
         }
 
         fetchAPI();
-        
+
     }, [url]);
 
-    return  {data, error, loading};
+    return { data, error, loading };
 
 }
 
