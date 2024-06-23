@@ -3,7 +3,8 @@ import '../assets/styles/style.css';
 
 const WeatherInfo = ({ weatherData }) => {
 
-    console.log('weatherData', weatherData)
+    console.log('weatherData', weatherData);
+    
     const {
         name,
         weather,

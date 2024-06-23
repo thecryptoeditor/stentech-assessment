@@ -9,8 +9,6 @@ const SearchByCities = ({ parentWeatherInfo }) => {
 
     const [inputValue, setInputValue] = useState();
 
-    const [weatherDetails, setWeatherDetails] = useState()
-
 
     const inputHandler = (event) => {
         setInputValue(event.target.value);
@@ -40,9 +38,7 @@ const SearchByCities = ({ parentWeatherInfo }) => {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=46d1711f5c49c9b2ca9607500c0c75bc`)
             const weatherInfo = await response.json();
 
-            setWeatherDetails(weatherInfo)
-
-            parentWeatherInfo(weatherDetails);
+            parentWeatherInfo(weatherInfo);
 
         })()
     }

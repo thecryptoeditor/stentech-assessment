@@ -7,6 +7,7 @@ function App() {
     const [parentWeatherInfo, setParentWeatherInfo] = useState(null);
 
     const handleDataFromChild = (data) => {
+        console.log("alert2", data)
         setParentWeatherInfo(data);
       };
 
