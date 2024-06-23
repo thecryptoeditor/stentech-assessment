@@ -7,14 +7,13 @@ function App() {
     const [parentWeatherInfo, setParentWeatherInfo] = useState(null);
 
     const handleDataFromChild = (data) => {
-        console.log("alert2", data)
         setParentWeatherInfo(data);
       };
 
     return (
         <div className="App">
             <SearchInput parentWeatherInfo={handleDataFromChild} />
-            { parentWeatherInfo != null ? <WeatherInfo weatherData={parentWeatherInfo}/> : 'Loading...' } 
+            { parentWeatherInfo != null ? <WeatherInfo weatherData={parentWeatherInfo}/> : `` } 
         </div>
     );
 }

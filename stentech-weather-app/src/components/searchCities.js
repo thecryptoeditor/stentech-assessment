@@ -9,12 +9,18 @@ const SearchByCities = ({ parentWeatherInfo }) => {
 
     const [inputValue, setInputValue] = useState('');
 
+    const [ state, setState ] = useState('Search');
+
+    const [ disabled, setDisabled ] = useState(false);
+
 
     const inputHandler = (event) => {
         setInputValue(event.target.value);
     }
-
+    
     const handleSearch = () => {
+        setState('Fetching Details');
+        setDisabled(true)
         setUrl(`http://api.positionstack.com/v1/forward?access_key=f0f649f70b71f26e55608d63b219b2be&query=${inputValue}`)
     }
 
@@ -39,6 +45,8 @@ const SearchByCities = ({ parentWeatherInfo }) => {
             const weatherInfo = await response.json();
 
             parentWeatherInfo(weatherInfo);
+            setState('Search')
+            setDisabled(false)
 
         })()
     }
@@ -56,7 +64,7 @@ const SearchByCities = ({ parentWeatherInfo }) => {
                         input="searchValue"
                         onChange={inputHandler}
                     />
-                    <button onClick={handleSearch}>Search</button>
+                    <button disabled={disabled} onClick={handleSearch}>{state}</button>
                 </div>
             </div>
         </>
