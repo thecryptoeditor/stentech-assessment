@@ -7,7 +7,7 @@ const SearchByCities = ({ parentWeatherInfo }) => {
 
     const {data, error, loading} = useFetch(url);
 
-    const [inputValue, setInputValue] = useState();
+    const [inputValue, setInputValue] = useState('');
 
 
     const inputHandler = (event) => {
