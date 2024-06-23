@@ -2,16 +2,23 @@ import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
 
-    const [data, setData] = useState(null);
+    const [data, setdata] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const apiCall = async () => {
+        const fetchAPI = async () => {
 
             try {
-                let response = await fetch(url);
-                setData(response);
+                let result = await fetch(url);
+
+                if (!result.ok) {
+                    throw new Error(`HTTP error! status: ${result.status}`);
+                }
+
+                const response = await result.json();
+
+                setdata(response);
             }
             catch(err) {
                 setError(err)
@@ -22,11 +29,11 @@ const useFetch = (url) => {
 
         }
 
-        apiCall();
-    }, []);
+        fetchAPI();
+        
+    }, [url]);
 
-
-    return { data, error, loading};
+    return  {data, error, loading};
 
 }
 
