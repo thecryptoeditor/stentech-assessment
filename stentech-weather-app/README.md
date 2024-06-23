@@ -33,3 +33,14 @@ The Stentech Weather App is a simple, user-friendly application that provides cu
     ```
     npm install
     ```
+
+3. Start the application:
+
+
+    ```
+    npm start
+    ```
+
+![Alt text](./screenshot1.png)
+
+### All right reserved.
