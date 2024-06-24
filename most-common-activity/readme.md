@@ -65,70 +65,54 @@ Sample data:
 1. Write a function to count the number of unique users.
 
 ```
-    function uniqueUsers(info) {
-        
-        let count = 0;
-        
+    function uniqueUsers(userInfo) {
+
         let seen = new Set();
-        
-        for(item of info) {
-            if(!seen.has(item.userId)) {
-                seen.add(item.userId);
-                count++;
-            }
-        }
-        
-        console.log('Total unique users are :', count);
-        console.log('Unique user IDs are', [ ...seen])
-        
+
+        userInfo.forEach(item => seen.add(item.userId));
+
+        return { count: seen.size, userIds: [...seen] };
     }
+
+    console.log(uniqueUsers(userInfo));
 ```
 
 
 2. Write a function to find the most common activity type.
 
 ```
-    function mostFrequestNumber(userInfo) {
-    
-        let obj = {};
-        
-        for(let i = 0; i < userInfo.length; i++) {
-            if(obj[userInfo[i].activityType]) {
-            obj[userInfo[i].activityType]++
-            }
-            else {
-                obj[userInfo[i].activityType] = 1; 
-        }
-        }
-        
-        let frequencyValue = 0;
-        let frequencyType = null;
-        
-        for(let key in obj) {
-            if(obj[key] > frequencyValue) {
-                frequencyValue = obj[key];
-                frequencyType = key;
-            }
-        }
-        console.log('Most common activity type is', frequencyType, 'with the frequesncy', frequencyValue);
+    function mostFrequentActivity(userInfo) {
+
+        let activityCounts = {};
+
+        userInfo.forEach(item => {
+            activityCounts[item.activityType] = (activityCounts[item.activityType] || 0) + 1;
+        });
+
+        let mostFrequent = Object.entries(activityCounts).reduce((a, b) => a[1] > b[1] ? a : b);
+
+        return { activityType: mostFrequent[0], frequency: mostFrequent[1] };
     }
 
-    mostFrequestNumber(userInfo);
+    console.log(mostFrequentActivity(userInfo));
+
 ```
 
 3. Write a function to generate a timeline of activities for each user, sorted by timestamp.
 
 ```
     function generateUserTimelines(userInfo) {
-    
-        const userTimelines = {};
+
+        let userTimelines = {};
 
         userInfo.forEach(activity => {
-            const { userId, activityType, timestamp } = activity;
-            if (!userTimelines[userId]) {
-                userTimelines[userId] = [];
+
+            if (!userTimelines[activity.userId]) {
+                userTimelines[activity.userId] = [];
             }
-            userTimelines[userId].push({ activityType, timestamp });
+
+            userTimelines[activity.userId].push({ activityType: activity.activityType, timestamp: activity.timestamp });
+            
         });
 
         for (const userId in userTimelines) {
@@ -136,6 +120,7 @@ Sample data:
         }
 
         return userTimelines;
+
     }
 
     console.log(generateUserTimelines(userInfo));
